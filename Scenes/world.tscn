@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvso7ysafawr5"]
+
+[ext_resource type="PackedScene" uid="uid://bk2bjligl3r3i" path="res://Scenes/world_tiles.tscn" id="1_ipl32"]
+
+[node name="World" type="Node2D"]
+
+[node name="WorldTiles" parent="." instance=ExtResource("1_ipl32")]
