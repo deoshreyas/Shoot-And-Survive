@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvso7ysafawr5"]
+[gd_scene load_steps=3 format=3 uid="uid://cvso7ysafawr5"]
 
 [ext_resource type="PackedScene" uid="uid://bk2bjligl3r3i" path="res://Scenes/world_tiles.tscn" id="1_ipl32"]
+[ext_resource type="PackedScene" uid="uid://dnnvu8olaaeii" path="res://Scenes/player.tscn" id="2_vxa5t"]
 
 [node name="World" type="Node2D"]
 
 [node name="WorldTiles" parent="." instance=ExtResource("1_ipl32")]
+
+[node name="Player" parent="WorldTiles" instance=ExtResource("2_vxa5t")]
+position = Vector2(125, 113)
