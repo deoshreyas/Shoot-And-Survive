@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuqkj5vcgcl1p"]
+
+[ext_resource type="Texture2D" uid="uid://d31ommmqpanrm" path="res://Assets/Sprites/heart.png" id="1_7bcf8"]
+[ext_resource type="FontFile" uid="uid://d0jseo3q8c3mi" path="res://Assets/Fonts/PixelifySans-Bold.ttf" id="2_pvpn2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sh7vd"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = 475.0
+offset_right = 512.0
+offset_bottom = 518.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sh7vd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(33.5, 21.5)
+scale = Vector2(0.0729167, 0.0729167)
+texture = ExtResource("1_7bcf8")
+
+[node name="Lives" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = -4.0
+offset_right = 131.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("2_pvpn2")
+theme_override_font_sizes/font_size = 40
+text = "x 3"

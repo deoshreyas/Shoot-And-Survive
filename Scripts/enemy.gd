@@ -1,4 +1,14 @@
 extends CharacterBody2D
+class_name Enemy
+
+@onready var lives_label = get_node("/root/World/HUD/Panel/Lives")
+
+var lives:
+	get:
+		return lives 
+	set(value):
+		lives = value
+		lives_label.text = "x " + str(value) 
 
 const SPEED = 50 
 var direction : Vector2
@@ -9,6 +19,7 @@ var entered
 signal hit_player
 
 func _ready():
+	lives = 3
 	var centre = get_viewport_rect().get_center()
 	var entered = false
 	var distance = centre - position
@@ -30,4 +41,7 @@ func _on_entry_timer_timeout():
 	entered = true
 
 func _on_area_2d_body_entered(body):
-	pass
+	if body is Player:
+		lives -= 1
+		if lives<=0:
+			body.queue_free()

@@ -52,7 +52,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnml8"]
-size = Vector2(8.66667, 8)
+size = Vector2(14.3333, 10.3333)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vuqwq"]
 radius = 9.00617
@@ -68,14 +68,14 @@ metadata/_edit_group_ = true
 sprite_frames = SubResource("SpriteFrames_ot14w")
 animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.861672
+frame_progress = 0.176446
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.666667)
+position = Vector2(0.166667, -1.16667)
 shape = SubResource("RectangleShape2D_bnml8")
 
 [node name="EntryTimer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 2.5
 one_shot = true
 autostart = true
 

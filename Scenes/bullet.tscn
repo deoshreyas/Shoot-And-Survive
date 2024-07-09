@@ -8,10 +8,10 @@ radius = 63.2455
 
 [node name="Bullet" type="Area2D"]
 modulate = Color(0.976471, 0.109804, 0, 1)
-light_mask = 8
-visibility_layer = 5
 z_index = 2
 scale = Vector2(0.1, 0.1)
+collision_layer = 8
+collision_mask = 4
 script = ExtResource("1_n0rse")
 metadata/_edit_group_ = true
 
@@ -25,4 +25,5 @@ shape = SubResource("CircleShape2D_x2i7c")
 position = Vector2(-5, -5)
 scale = Vector2(10.5, 10.5)
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
