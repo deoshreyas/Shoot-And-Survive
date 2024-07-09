@@ -6,40 +6,40 @@
 script = ExtResource("1_lto8j")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(260, -50)
+position = Vector2(248, -50)
 
 [node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(294, -50)
+position = Vector2(282, -50)
 
 [node name="Marker2D3" type="Marker2D" parent="."]
-position = Vector2(226, -50)
+position = Vector2(214, -50)
 
 [node name="Marker2D4" type="Marker2D" parent="."]
-position = Vector2(260, 562)
+position = Vector2(252, 562)
 
 [node name="Marker2D11" type="Marker2D" parent="."]
-position = Vector2(294, 562)
+position = Vector2(286, 562)
 
 [node name="Marker2D12" type="Marker2D" parent="."]
-position = Vector2(226, 562)
+position = Vector2(218, 562)
 
 [node name="Marker2D5" type="Marker2D" parent="."]
-position = Vector2(-50, 294)
+position = Vector2(-50, 305)
 
 [node name="Marker2D7" type="Marker2D" parent="."]
-position = Vector2(-50, 272)
+position = Vector2(-50, 283)
 
 [node name="Marker2D8" type="Marker2D" parent="."]
-position = Vector2(-50, 248)
+position = Vector2(-50, 259)
 
 [node name="Marker2D6" type="Marker2D" parent="."]
-position = Vector2(562, 294)
+position = Vector2(562, 301)
 
 [node name="Marker2D9" type="Marker2D" parent="."]
-position = Vector2(562, 272)
+position = Vector2(562, 279)
 
 [node name="Marker2D10" type="Marker2D" parent="."]
-position = Vector2(562, 248)
+position = Vector2(562, 255)
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 autostart = true

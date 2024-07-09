@@ -8,7 +8,46 @@
 
 [node name="WorldTiles" parent="." instance=ExtResource("1_ipl32")]
 
-[node name="Player" parent="WorldTiles" instance=ExtResource("2_vxa5t")]
-position = Vector2(125, 113)
+[node name="Player" parent="." instance=ExtResource("2_vxa5t")]
+position = Vector2(250, 226)
+scale = Vector2(3, 3)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_4kkss")]
+
+[node name="Marker2D" parent="EnemySpawner" index="0"]
+position = Vector2(252, -50)
+
+[node name="Marker2D2" parent="EnemySpawner" index="1"]
+position = Vector2(286, -50)
+
+[node name="Marker2D3" parent="EnemySpawner" index="2"]
+position = Vector2(218, -50)
+
+[node name="Marker2D4" parent="EnemySpawner" index="3"]
+position = Vector2(288, 513)
+
+[node name="Marker2D11" parent="EnemySpawner" index="4"]
+position = Vector2(322, 513)
+
+[node name="Marker2D12" parent="EnemySpawner" index="5"]
+position = Vector2(254, 513)
+
+[node name="Marker2D5" parent="EnemySpawner" index="6"]
+position = Vector2(-50, 287)
+
+[node name="Marker2D7" parent="EnemySpawner" index="7"]
+position = Vector2(-50, 265)
+
+[node name="Marker2D8" parent="EnemySpawner" index="8"]
+position = Vector2(-50, 241)
+
+[node name="Marker2D6" parent="EnemySpawner" index="9"]
+position = Vector2(562, 287)
+
+[node name="Marker2D9" parent="EnemySpawner" index="10"]
+position = Vector2(562, 265)
+
+[node name="Marker2D10" parent="EnemySpawner" index="11"]
+position = Vector2(562, 241)
+
+[editable path="EnemySpawner"]

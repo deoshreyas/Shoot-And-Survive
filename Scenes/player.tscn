@@ -235,8 +235,9 @@ script = ExtResource("1_l0mj8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_or4qt")
-animation = &"west"
+animation = &"southwest"
 autoplay = "idle"
+frame_progress = 0.964845
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1.5)
