@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dv8yjxiyiy0i0"]
+[gd_scene load_steps=15 format=3 uid="uid://dv8yjxiyiy0i0"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_qxnyp"]
 [ext_resource type="Texture2D" uid="uid://dq71jta6krlkd" path="res://Assets/Sprites/Bat/Death/SimpleEnemies Bat_Death_0.png" id="2_4bqhk"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://buve1djvo4ylx" path="res://Assets/Sprites/Bat/Idle/SimpleEnemies Bat_Idle_1.png" id="8_laflo"]
 [ext_resource type="Texture2D" uid="uid://7l2yo5dj5tyk" path="res://Assets/Sprites/Bat/Idle/SimpleEnemies Bat_Idle_2.png" id="9_rhg81"]
 [ext_resource type="Texture2D" uid="uid://giin101ny1co" path="res://Assets/Sprites/Bat/Idle/SimpleEnemies Bat_Idle_3.png" id="10_cuiml"]
+[ext_resource type="PackedScene" uid="uid://b0qao6vuiwq5" path="res://Scenes/random_item_spawner.tscn" id="11_3x120"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ot14w"]
 animations = [{
@@ -90,6 +91,8 @@ shape = SubResource("CircleShape2D_vuqwq")
 [node name="DespawnTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="RandomItemSpawner" parent="." instance=ExtResource("11_3x120")]
 
 [connection signal="timeout" from="EntryTimer" to="." method="_on_entry_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -41,6 +41,7 @@ func enemy_death():
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
 	$AnimatedSprite2D.play("death")
 	$DespawnTimer.start()
+	$RandomItemSpawner.spawn_random_item(position)
 
 func _on_timer_timeout():
 	queue_free()
