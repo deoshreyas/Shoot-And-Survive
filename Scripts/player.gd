@@ -6,27 +6,17 @@ const SPEED = 75
 
 func _physics_process(delta):
 	movement(delta)
-	mouse_rotation()
 
 func movement(delta):
 	var input = Input.get_vector("left", "right", "up", "down").normalized()
 	velocity = input * SPEED * delta
-	var anim = ""
-	if input!=Vector2.ZERO:
-		if input.y<0:
-			anim += "north"
-		elif input.y>0:
-			anim += "south"
-		if input.x<0:
-			anim += "west"
-		elif input.x>0:
-			anim += "east"
-		sprite.play(anim)
+	if velocity!=Vector2.ZERO:
+		mouse_rotation()
 	else:
-		sprite.play("idle")
+		mouse_rotation(false)
 	move_and_collide(velocity)
 
-func mouse_rotation():
+func mouse_rotation(movement=true):
 	var mouse = get_local_mouse_position()
 	var angle = snappedf(mouse.angle(), PI/4) / (PI/4)
 	angle = wrapi(int(angle), 0, 8)
@@ -39,3 +29,5 @@ func mouse_rotation():
 		5: sprite.play("northwest")
 		6: sprite.play("north")
 		7: sprite.play("northeast")
+	if not movement:
+		sprite.frame = 0
