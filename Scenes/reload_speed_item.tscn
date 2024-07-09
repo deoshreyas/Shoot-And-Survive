@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d20jjj1q51dpc"]
+
+[ext_resource type="Script" path="res://Scripts/reload_speed_item.gd" id="1_5mmd6"]
+[ext_resource type="Texture2D" uid="uid://lkc0hqaailj8" path="res://Assets/Sprites/clock.png" id="2_4m215"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0sjcm"]
+radius = 26.0
+
+[node name="ReloadSpeedItem" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_5mmd6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("2_4m215")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0sjcm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

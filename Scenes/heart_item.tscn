@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/heart_item.gd" id="1_vyc8q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4loa"]
-radius = 21.0238
+radius = 16.0
 
 [node name="HeartItem" type="Area2D"]
 collision_layer = 16

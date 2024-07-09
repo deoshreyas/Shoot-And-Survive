@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0qao6vuiwq5"]
+[gd_scene load_steps=5 format=3 uid="uid://b0qao6vuiwq5"]
 
 [ext_resource type="Script" path="res://Scripts/RandomItemSpawner.gd" id="1_2jlsr"]
 [ext_resource type="PackedScene" uid="uid://crptpwnikhcgx" path="res://Scenes/heart_item.tscn" id="2_m0sd3"]
+[ext_resource type="PackedScene" uid="uid://b1gi7j7uhi214" path="res://Scenes/speed_item.tscn" id="3_ooq1e"]
+[ext_resource type="PackedScene" uid="uid://d20jjj1q51dpc" path="res://Scenes/reload_speed_item.tscn" id="4_g6xsq"]
 
 [node name="RandomItemSpawner" type="Node2D"]
 script = ExtResource("1_2jlsr")
-random_items = Array[PackedScene]([ExtResource("2_m0sd3")])
+random_items = Array[PackedScene]([ExtResource("2_m0sd3"), ExtResource("3_ooq1e"), ExtResource("4_g6xsq")])

@@ -240,7 +240,7 @@ script = ExtResource("1_l0mj8")
 sprite_frames = SubResource("SpriteFrames_or4qt")
 animation = &"southwest"
 autoplay = "idle"
-frame_progress = 0.612602
+frame_progress = 0.745684
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1.5)
@@ -248,4 +248,14 @@ shape = SubResource("RectangleShape2D_g6mcy")
 
 [node name="ShootCooldown" type="Timer" parent="."]
 
+[node name="SpeedPowerupTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="ReloadPowerupTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]
+[connection signal="timeout" from="SpeedPowerupTimer" to="." method="_on_speed_powerup_timer_timeout"]
+[connection signal="timeout" from="ReloadPowerupTimer" to="." method="_on_reload_powerup_timer_timeout"]

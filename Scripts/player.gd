@@ -1,13 +1,18 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 100
+const DEFAULT_SPEED = 100
+const DEFAULT_RELOAD_TIME = 1.0
+
+var speed = 100
 
 @onready var sprite = $AnimatedSprite2D
 
 var bullet = preload("res://Scenes/bullet.tscn")
 
-var can_shoot = true 
+var can_shoot = true  
+
+var reload_time = 1.0
 
 func _physics_process(delta):
 	movement(delta)
@@ -15,7 +20,7 @@ func _physics_process(delta):
 
 func movement(delta):
 	var input = Input.get_vector("left", "right", "up", "down").normalized()
-	velocity = input * SPEED * delta
+	velocity = input * speed * delta
 	if velocity!=Vector2.ZERO:
 		mouse_rotation()
 	else:
@@ -46,7 +51,23 @@ func shoot():
 		new_bullet.position = position
 		get_tree().root.add_child(new_bullet)
 		can_shoot = false
+		$ShootCooldown.wait_time = reload_time
+		print(reload_time)
 		$ShootCooldown.start()
 
 func _on_shoot_cooldown_timeout():
 	can_shoot = true
+
+func increase_speed():
+	speed = DEFAULT_SPEED * 3
+	$SpeedPowerupTimer.start()
+
+func increase_reload_speed():
+	reload_time = reload_time / 4
+	$ReloadPowerupTimer.start()
+
+func _on_speed_powerup_timer_timeout():
+	speed = DEFAULT_SPEED
+
+func _on_reload_powerup_timer_timeout():
+	reload_time = DEFAULT_RELOAD_TIME

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1gi7j7uhi214"]
+
+[ext_resource type="Script" path="res://Scripts/speed_item.gd" id="1_chwu0"]
+[ext_resource type="Texture2D" uid="uid://dkcqir4cbd5tl" path="res://Assets/Sprites/bolt.png" id="2_aswvg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i4loa"]
+radius = 16.0
+
+[node name="SpeedItem" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_chwu0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_aswvg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i4loa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]
