@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvso7ysafawr5"]
+[gd_scene load_steps=6 format=3 uid="uid://cvso7ysafawr5"]
 
 [ext_resource type="PackedScene" uid="uid://bk2bjligl3r3i" path="res://Scenes/world_tiles.tscn" id="1_ipl32"]
 [ext_resource type="PackedScene" uid="uid://dnnvu8olaaeii" path="res://Scenes/player.tscn" id="2_vxa5t"]
 [ext_resource type="PackedScene" uid="uid://dnao50gxrrihx" path="res://Scenes/enemy_spawner.tscn" id="3_4kkss"]
 [ext_resource type="PackedScene" uid="uid://cuqkj5vcgcl1p" path="res://Scenes/HUD.tscn" id="4_xu8aw"]
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="5_64haq"]
 
 [node name="World" type="Node2D"]
 
@@ -52,5 +53,6 @@ position = Vector2(250, 226)
 scale = Vector2(3, 3)
 
 [node name="HUD" parent="." instance=ExtResource("4_xu8aw")]
+script = ExtResource("5_64haq")
 
 [editable path="EnemySpawner"]

@@ -11,5 +11,6 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 func _on_body_entered(body):
 	if body is Enemy:
-		queue_free()
-		body.queue_free()
+		if body.alive:
+			queue_free()
+			body.enemy_death()
