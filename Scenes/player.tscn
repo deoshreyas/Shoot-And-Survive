@@ -230,15 +230,22 @@ animations = [{
 size = Vector2(11, 17)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 1
 scale = Vector2(1.5, 1.5)
+collision_layer = 2
+collision_mask = 17
 script = ExtResource("1_l0mj8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_or4qt")
 animation = &"southwest"
 autoplay = "idle"
-frame_progress = 0.964845
+frame_progress = 0.612602
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_g6mcy")
+
+[node name="ShootCooldown" type="Timer" parent="."]
+
+[connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]

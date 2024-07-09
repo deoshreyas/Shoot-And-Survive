@@ -4,8 +4,13 @@ const SPEED = 75
 
 @onready var sprite = $AnimatedSprite2D
 
+var bullet = preload("res://Scenes/bullet.tscn")
+
+var can_shoot = true 
+
 func _physics_process(delta):
 	movement(delta)
+	shoot()
 
 func movement(delta):
 	var input = Input.get_vector("left", "right", "up", "down").normalized()
@@ -31,3 +36,16 @@ func mouse_rotation(movement=true):
 		7: sprite.play("northeast")
 	if not movement:
 		sprite.frame = 0
+
+func shoot():
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_shoot:
+		var dir = get_global_mouse_position() - position 
+		var new_bullet = bullet.instantiate()
+		new_bullet.dir = dir.normalized()
+		new_bullet.position = position
+		get_tree().root.add_child(new_bullet)
+		can_shoot = false
+		$ShootCooldown.start()
+
+func _on_shoot_cooldown_timeout():
+	can_shoot = true

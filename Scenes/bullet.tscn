@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgnl3lag3ukuw"]
+
+[ext_resource type="Texture2D" uid="uid://bl5fdarjxkgfw" path="res://Assets/Sprites/Circle.png" id="1_5d4kv"]
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_n0rse"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2i7c"]
+radius = 63.2455
+
+[node name="Bullet" type="Area2D"]
+modulate = Color(0.976471, 0.109804, 0, 1)
+light_mask = 8
+visibility_layer = 5
+z_index = 2
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_n0rse")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5d4kv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x2i7c")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-5, -5)
+scale = Vector2(10.5, 10.5)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

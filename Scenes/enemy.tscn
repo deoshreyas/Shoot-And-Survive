@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dv8yjxiyiy0i0"]
+[gd_scene load_steps=14 format=3 uid="uid://dv8yjxiyiy0i0"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_qxnyp"]
 [ext_resource type="Texture2D" uid="uid://dq71jta6krlkd" path="res://Assets/Sprites/Bat/Death/SimpleEnemies Bat_Death_0.png" id="2_4bqhk"]
@@ -54,7 +54,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnml8"]
 size = Vector2(8.66667, 8)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vuqwq"]
+radius = 9.00617
+
 [node name="Enemy" type="CharacterBody2D"]
+z_index = 3
 scale = Vector2(3, 3)
 collision_layer = 4
 script = ExtResource("1_qxnyp")
@@ -62,10 +66,25 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ot14w")
-animation = &"death"
+animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.618683
+frame_progress = 0.861672
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.666667)
 shape = SubResource("RectangleShape2D_bnml8")
+
+[node name="EntryTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vuqwq")
+
+[connection signal="timeout" from="EntryTimer" to="." method="_on_entry_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

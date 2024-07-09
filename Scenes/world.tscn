@@ -8,10 +8,6 @@
 
 [node name="WorldTiles" parent="." instance=ExtResource("1_ipl32")]
 
-[node name="Player" parent="." instance=ExtResource("2_vxa5t")]
-position = Vector2(250, 226)
-scale = Vector2(3, 3)
-
 [node name="EnemySpawner" parent="." instance=ExtResource("3_4kkss")]
 
 [node name="Marker2D" parent="EnemySpawner" index="0"]
@@ -49,5 +45,9 @@ position = Vector2(562, 265)
 
 [node name="Marker2D10" parent="EnemySpawner" index="11"]
 position = Vector2(562, 241)
+
+[node name="Player" parent="." instance=ExtResource("2_vxa5t")]
+position = Vector2(250, 226)
+scale = Vector2(3, 3)
 
 [editable path="EnemySpawner"]
