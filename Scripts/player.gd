@@ -25,7 +25,8 @@ func movement(delta):
 		mouse_rotation()
 	else:
 		mouse_rotation(false)
-	move_and_collide(velocity)
+	if check_constraints():
+		move_and_collide(velocity)
 
 func mouse_rotation(movement=true):
 	var mouse = get_local_mouse_position()
@@ -75,3 +76,19 @@ func _on_reload_powerup_timer_timeout():
 func reset_powerups():
 	speed = DEFAULT_SPEED
 	reload_time = DEFAULT_RELOAD_TIME
+
+func check_constraints():
+	if position.x<507:
+		if position.x>5:
+			if position.y>5:
+				if position.y<436:
+					return true 
+				else:
+					position.y = 435
+			else:
+				position.y = 6 
+		else:
+			position.x = 6
+	else:
+		position.x = 506
+	return false
