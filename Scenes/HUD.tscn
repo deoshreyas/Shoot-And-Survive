@@ -28,3 +28,18 @@ offset_bottom = 59.0
 theme_override_fonts/font = ExtResource("2_pvpn2")
 theme_override_font_sizes/font_size = 40
 text = "x 3"
+
+[node name="Waves" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = -472.0
+offset_right = 37.5
+offset_bottom = -409.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pvpn2")
+theme_override_font_sizes/font_size = 50
+text = "999"

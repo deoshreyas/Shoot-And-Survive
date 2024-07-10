@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkjur0n2sfx3h"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_sac6o"]
+[ext_resource type="FontFile" uid="uid://d0jseo3q8c3mi" path="res://Assets/Fonts/PixelifySans-Bold.ttf" id="1_xhd38"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sac6o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.74902, 0.364706, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.5
+offset_top = -151.0
+offset_right = 124.5
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Start" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Music")
+theme_override_fonts/font = ExtResource("1_xhd38")
+theme_override_font_sizes/font_size = 75
+text = "Start"
+
+[node name="Music" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xhd38")
+theme_override_font_sizes/font_size = 75
+text = "Music"
+
+[node name="Quit" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Music")
+focus_neighbor_bottom = NodePath("../Start")
+theme_override_fonts/font = ExtResource("1_xhd38")
+theme_override_font_sizes/font_size = 75
+text = "Quit"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Music" to="." method="_on_music_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

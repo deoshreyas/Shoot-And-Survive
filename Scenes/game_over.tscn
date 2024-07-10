@@ -55,7 +55,7 @@ theme_override_font_sizes/font_size = 75
 text = "Game Over!"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="Panel/Control/VBoxContainer"]
+[node name="WavesSurvived" type="Label" parent="Panel/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_5e1ej")
 theme_override_font_sizes/font_size = 45
