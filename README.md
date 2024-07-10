@@ -8,3 +8,8 @@ I have not yet exported the project. So you'll need to run it using the Godot en
 
 ## :grey_question: Controls
 `W`, `A`, `S` and `D` or the corresponding arrow keys! Click to shoot!
+
+## :star: Credits
+- [AxulArt](https://github.com/deoshreyas/Shoot-And-Survive) for the character!
+- [Bat Enemy](https://ome6a1717.itch.io/simple-enemies-bat)!
+- [Background Tileset](https://kijosoft.itch.io/lil-ttd-green)
