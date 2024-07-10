@@ -15,15 +15,15 @@ offset_bottom = 518.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_sh7vd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel"]
-position = Vector2(33.5, 21.5)
+position = Vector2(217.5, 21.5)
 scale = Vector2(0.0729167, 0.0729167)
 texture = ExtResource("1_7bcf8")
 
 [node name="Lives" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 56.0
+offset_left = 240.0
 offset_top = -4.0
-offset_right = 131.0
+offset_right = 315.0
 offset_bottom = 59.0
 theme_override_fonts/font = ExtResource("2_pvpn2")
 theme_override_font_sizes/font_size = 40

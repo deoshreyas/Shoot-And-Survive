@@ -52,7 +52,6 @@ func shoot():
 		get_tree().root.add_child(new_bullet)
 		can_shoot = false
 		$ShootCooldown.wait_time = reload_time
-		print(reload_time)
 		$ShootCooldown.start()
 
 func _on_shoot_cooldown_timeout():
@@ -70,4 +69,8 @@ func _on_speed_powerup_timer_timeout():
 	speed = DEFAULT_SPEED
 
 func _on_reload_powerup_timer_timeout():
+	reload_time = DEFAULT_RELOAD_TIME
+
+func reset_powerups():
+	speed = DEFAULT_SPEED
 	reload_time = DEFAULT_RELOAD_TIME

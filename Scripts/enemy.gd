@@ -20,6 +20,7 @@ func _ready():
 	else:
 		direction.y = distance.y
 		direction.x = 0
+	Globals.connect("reset_game", _reset)
 
 func _physics_process(delta):
 	if alive:
@@ -44,4 +45,7 @@ func enemy_death():
 	$RandomItemSpawner.spawn_random_item(position)
 
 func _on_timer_timeout():
+	queue_free()
+
+func _reset():
 	queue_free()
