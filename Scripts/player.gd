@@ -53,6 +53,7 @@ func shoot():
 		can_shoot = false
 		$ShootCooldown.wait_time = reload_time
 		$ShootCooldown.start()
+		SoundRoot.play("shoot")
 
 func _on_shoot_cooldown_timeout():
 	can_shoot = true

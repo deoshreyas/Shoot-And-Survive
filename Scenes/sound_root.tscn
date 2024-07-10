@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccvmy6v0w3ewn"]
+
+[ext_resource type="Script" path="res://Scripts/SoundRoot.gd" id="1_df8bh"]
+[ext_resource type="AudioStream" uid="uid://b204a4xhekfbj" path="res://Assets/SFX/bg.mp3" id="1_kdvhy"]
+[ext_resource type="AudioStream" uid="uid://doyiu76no15ww" path="res://Assets/SFX/shoot.wav" id="3_1w5wa"]
+[ext_resource type="AudioStream" uid="uid://2e1dsvwjlpuo" path="res://Assets/SFX/pickup.wav" id="3_hncpj"]
+
+[node name="SoundRoot" type="Node2D"]
+script = ExtResource("1_df8bh")
+
+[node name="Bg" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_kdvhy")
+volume_db = -10.0
+
+[node name="Pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hncpj")
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1w5wa")
+volume_db = -10.0
